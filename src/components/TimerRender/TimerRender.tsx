@@ -1,6 +1,7 @@
 import { TimerRenderProps } from "../../interfaces/timerRenderProps";
 import { TimerType } from "../../types/timerType";
 import { TimerStart } from "../TimerStart/TimerStart";
+import timerRenderStyles from "./TimerRender.module.css";
 
 export function TimerRender({
   timerValue,
@@ -13,9 +14,9 @@ export function TimerRender({
   };
 
   return (
-    <div>
+    <div className={timerRenderStyles.container}>
       <TimerStart setTimerValue={setTimerValue} />
-      <div>
+      <div className={timerRenderStyles.content}>
         {renderTimer("hh")} : {renderTimer("mm")} : {renderTimer("ss")}
       </div>
     </div>

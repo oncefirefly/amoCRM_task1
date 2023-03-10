@@ -1,5 +1,6 @@
 import { TimerType } from "../../types/timerType";
 import { TimerSetterProps } from "../../interfaces//timerSetterProps";
+import timerSetterStyles from "./TimerSetter.module.css";
 
 export default function TimerSetter({
   value,
@@ -21,7 +22,7 @@ export default function TimerSetter({
   };
 
   return (
-    <label htmlFor={propertyToChange}>
+    <label className={timerSetterStyles.label} htmlFor={propertyToChange}>
       {`Enter ${propertyToChange}`}
       <input
         name={propertyToChange}

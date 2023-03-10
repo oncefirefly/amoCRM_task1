@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { TimerType } from "../../types/timerType";
 import { TimerRender } from "../TimerRender/TimerRender";
 import TimerSetter from "../TimerSetter/TimerSetter";
+import timerStyles from "./Timer.module.css";
 
 export default function Timer(): React.ReactElement {
   const [timerValue, setTimerValue] = useState<TimerType>({
@@ -31,8 +32,8 @@ export default function Timer(): React.ReactElement {
   }, [timerValue]);
 
   return (
-    <div>
-      <form>
+    <main className={timerStyles.main}>
+      <form className={timerStyles.form}>
         <TimerSetter
           value={timerValue.hh}
           propertyToChange={"hh"}
@@ -50,6 +51,6 @@ export default function Timer(): React.ReactElement {
         />
       </form>
       <TimerRender timerValue={timerValue} setTimerValue={setTimerValue} />
-    </div>
+    </main>
   );
 }
